@@ -17,4 +17,16 @@ public class ParkingLot {
         }
         return null;
     }
+    public void displayStatus() {
+        System.out.println("========== PARKING STATUS ==========");
+        for(ParkingSlot slot : slots) {
+            if(slot.isAvailable()) {
+                System.out.println(slot.getSlotId() + "-> available");
+            }
+            else {
+                System.out.println(slot.getSlotId()+"-> occupied"+slot.getVehicle().getVehicleNumber());
+            }
+        }
+        System.out.println("====================================");
+    }
 }

@@ -32,5 +32,6 @@ public class Main {
         else {
             System.out.println("No suitable parking slot available");
         }
+        parkingLot.displayStatus();
     }
 }
