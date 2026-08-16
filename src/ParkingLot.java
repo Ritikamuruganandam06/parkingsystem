@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.naming.PartialResultException;
 public class ParkingLot {
     private List<ParkingSlot> slots;
     public ParkingLot() {
@@ -28,5 +30,14 @@ public class ParkingLot {
             }
         }
         System.out.println("====================================");
+    }
+    public boolean removeVehicle(String vehicleNumber) {
+        for(ParkingSlot slot : slots) {
+            if(!slot.isAvailable() && slot.getVehicle().getVehicleNumber().equals(vehicleNumber)) {
+                slot.removeVehicle();
+                return true;
+            }
+        }
+        return false;
     }
 }

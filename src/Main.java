@@ -33,5 +33,15 @@ public class Main {
             System.out.println("No suitable parking slot available");
         }
         parkingLot.displayStatus();
+        boolean removed =
+        parkingLot.removeVehicle("TN38AB1234");
+
+        if (removed) {
+            System.out.println("Vehicle removed successfully!");
+        } else {
+            System.out.println("Vehicle not found!");
+        }
+
+        parkingLot.displayStatus();
     }
 }
